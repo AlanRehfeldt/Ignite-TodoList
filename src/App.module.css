@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    justify-content: center;
+
+    background: var(--gray-700);
+    width: 100%;
+    padding: 4.5rem 0 5rem;
+}
+
+main {
+    max-width: 46rem;
+    margin: 0 auto;
+}
+
+.newTask {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+
+    margin-top: -2rem;
+
+    
+}
+
+.newTask input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+
+    background: var(--gray-500);
+    color: var(--gray-100);
+}
+
+.newTask input::placeholder {
+    color: var(--gray-300);
+}
+
+.newTask button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 1rem;
+    border-radius: 8px;
+
+    background: var(--blueDark);
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-weight: 700;
+
+
+    cursor: pointer;
+}
+
+.tasksCounts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 4rem 0 1.5rem;
+}
+
+.countTasks, .tasksDone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.countTasks p {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.tasksDone p {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.countTasks span, .tasksDone span {
+    background: var(--gray-400);
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-weight: 700;
+}
+
+.tasksList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
