@@ -16,32 +16,32 @@ import './global.css'
 //   {
 //     id: uuidv4(),
 //     title: 'Wash the dishes',
-//     isComplet: true
+//     isComplete: true
 //   },
 //   {
 //     id: uuidv4(),
 //     title: 'Do laundry',
-//     isComplet: false
+//     isComplete: false
 //   },
 //   {
 //     id: uuidv4(),
 //     title: 'Study React',
-//     isComplet: false
+//     isComplete: false
 //   },
 //   {
 //     id: uuidv4(),
 //     title: 'Complete React chanlange',
-//     isComplet: false
+//     isComplete: false
 //   },
 //   {
 //     id: uuidv4(),
 //       title: 'Call mom',
-//       isComplet: false
+//       isComplete: false
 //   },
 //   {
 //     id: uuidv4(),
 //       title: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis repellendus hic iste, architecto iure cumque minima consequuntur saepe voluptatibus fugiat cum, accusamus temporibus distinctio esse ab animi maxime officia odio.',
-//       isComplet: true
+//       isComplete: true
 //   }
 // ]
 
@@ -68,14 +68,19 @@ export function App() {
       isComplete: false
     }
 
-    setTasks([...tasks, task])
+    setTasks([task, ...tasks])
     setCountTasks(tasks.length + 1)
     setNewTask('')
   }
 
   function updateTask(taskUpdated: taskType) {
     const updateTasks = tasks.filter(task => task.id !== taskUpdated.id)
-    setTasks([...updateTasks, taskUpdated])
+
+    if(taskUpdated.isComplete) {
+      setTasks([...updateTasks, taskUpdated])
+    } else {
+      setTasks([taskUpdated, ...updateTasks])
+    }
 
     const tasksDone = tasks.filter(task => task.isComplete).length
     if(taskUpdated.isComplete) {
