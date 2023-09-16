@@ -4,15 +4,22 @@ import styles from './TaskList.module.css'
 
 interface TaskListProps {
     tasks: taskType[]
+    onUpdateTask: (taskUpdated: taskType) => void
+    onDeleteTask: (taskUpdated: taskType) => void
 }
 
-export function TaskList({ tasks }: TaskListProps) {
+export function TaskList({ tasks, onUpdateTask, onDeleteTask }: TaskListProps) {
     return (
           <div className={styles.tasksList}>
             {
               tasks.map(task => {
                 return (
-                  <Task key={task.id} task={task} />
+                    <Task 
+                        key={task.id} 
+                        task={task} 
+                        onUpdateTask={onUpdateTask}
+                        onDeleteTask={onDeleteTask} 
+                    />
                 )
               })
             }
